@@ -27,6 +27,13 @@ public class RestauranteController : ControllerBase
     }
 
     [HttpPost]
+    public ActionResult RecebeRestauranteDoRestauranteService(RestauranteReadDto dto)
+    {
+        Console.WriteLine(dto.Id);
+        return Ok();
+    }
+
+    [HttpPost]
     public IActionResult TestInboundConnection()
     {
         return Ok("Conexão ok!");

@@ -14,7 +14,14 @@ namespace RestauranteService.AsyncDataServices
         public MessageBusClient(IConfiguration configuration)
         {
             _configuration = configuration;
-            _connection = new ConnectionFactory() { HostName = "localhost", Port = 8002 }.CreateConnection();
+            _connection = new ConnectionFactory()
+            {
+                HostName = "localhost",
+                Port = 5672,
+                UserName = "user",
+                Password = "password"
+            }.CreateConnection();
+
             _channel = _connection.CreateModel();
             _channel.ExchangeDeclare(exchange: "trigger", type: ExchangeType.Fanout);
         }

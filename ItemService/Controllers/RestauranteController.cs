@@ -32,10 +32,4 @@ public class RestauranteController : ControllerBase
         Console.WriteLine(dto.Id);
         return Ok();
     }
-
-    [HttpPost]
-    public IActionResult TestInboundConnection()
-    {
-        return Ok("Conexão ok!");
-    }
 }
